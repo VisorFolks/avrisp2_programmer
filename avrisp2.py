@@ -10,7 +10,7 @@ def get_cmdline_avrisp2():
 def get_cmdline_target(target):
     if(target == "None"):
         log.errexit("Target not specified!")
-    return " -m " + target
+    return " -p " + target
 
 def get_cmdline_erase():
     return " -e"
@@ -18,7 +18,6 @@ def get_cmdline_erase():
 def get_cmdline_program(ifile):
     if(os.path.isfile(ifile)):
         ext = os.path.splitext(ifile)[1].split('.')[1]
-        print(ext)
         switcher = {
             'elf': 'e',
             'bin': 'b',
